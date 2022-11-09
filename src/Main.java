@@ -1,6 +1,3 @@
-import java.lang.reflect.Array;
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.stream.IntStream;
 
 public class Main {
@@ -24,25 +21,26 @@ public class Main {
         //Задание 2.
         int min = 200001;
         int max = -1;
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] < min) {
-                min = arr[i];
+        for (int j : arr) {
+            if (j < min) {
+                min = j;
             }
-            if (arr[i] > max) {
-                max = arr[i];
+            if (j > max) {
+                max = j;
             }
         }
         System.out.println("Минимальная сумма трат за день" +
                 " составила "+ min  +" рублей. Максимальная" +
                 " сумма трат за день составила "+ max  +" рублей");
         //Задание 3.
-        double sredExpenses=IntStream.of(arr).sum()/ arr.length;
-        System.out.println("«Средняя сумма трат за месяц составила "+ sredExpenses +" рублей»");
+        double mediumExpenses = IntStream.of(arr).sum()/ arr.length;
+        System.out.println("«Средняя сумма трат за месяц составила "+ mediumExpenses +" рублей»");
         //Задание 4.
         char[] reverseFullName = { 'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
         StringBuilder sb = new StringBuilder();
         for(char c : reverseFullName) {
             sb.insert(0, c);
+
         }
         String reversed = sb.toString();
         System.out.print(reversed);
